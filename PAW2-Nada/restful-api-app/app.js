@@ -2,6 +2,15 @@ const express = require("express"); //impor express
 const app = express(); //instansiasi
 const PORT = 3000; //port yang akan digunakan
 
+function logger(req, res, next) {
+  const waktu = new Date().toISOString();
+  console.log(`[${waktu}] ${req.method} ${req.url}`);
+  next(); // wajib, agar request lanjut ke handler berikutnya
+}
+
+// Didaftarkan sebelum route agar mencatat seluruh request
+app.use(logger);
+
 // Middleware agar req.body (JSON) dapat dibaca
 app.use(express.json());
 
