@@ -2,7 +2,7 @@ name: Development
 values:
   - key: base_url
     value: ''
-  - key: api-key
+  - key: api_key
     value: ''
   - key: mahasiswaId
     value: ''

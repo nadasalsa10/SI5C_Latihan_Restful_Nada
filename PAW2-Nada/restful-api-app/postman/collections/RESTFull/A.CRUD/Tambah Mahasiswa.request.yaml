@@ -1,4 +1,33 @@
 $kind: http-request
-url: ""
-method: GET
+url: "{{base_url}}/mahasiswa"
+method: POST
+headers:
+  Content-Type: application/json
+  x-api-key: "{{api_key}}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama\": \"Glean\",\r
+
+    \  \"jurusan\": \"Sistem Informasi\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code adalah 201', function () {
+        pm.response.to.have.status(201);
+      });
+
+      pm.test('Data baru memiliki id dan nama sesuai kiriman', function () {
+        const jsonData = pm.response.json();
+        pm.expect(jsonData).to.have.property('id');
+        pm.expect(jsonData.nama).to.eql('Citra');
+      });
+
+      if (pm.response.code === 201) {
+        pm.environment.set('mahasiswaId', pm.response.json().id);
+      }
+    language: text/javascript
 order: 4372891684870774

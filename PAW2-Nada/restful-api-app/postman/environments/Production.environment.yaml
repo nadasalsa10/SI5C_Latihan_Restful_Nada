@@ -2,3 +2,7 @@ name: Production
 values:
   - key: base_url
     value: ''
+  - key: api-key
+    value: ''
+  - key: mahasiswaId
+    value: ''

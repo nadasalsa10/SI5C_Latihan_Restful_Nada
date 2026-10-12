@@ -1,5 +1,5 @@
 $kind: http-request
-url: http://localhost:3000/mahasiswa
+url: http://localhost:4000/mahasiswa
 method: POST
 body:
   type: json
