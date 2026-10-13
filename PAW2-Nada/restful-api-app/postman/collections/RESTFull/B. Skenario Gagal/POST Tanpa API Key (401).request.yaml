@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{base_url}}/mahasiswa"
+method: POST
+order: 1791795709629

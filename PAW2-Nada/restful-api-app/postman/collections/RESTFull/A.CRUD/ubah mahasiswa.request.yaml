@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{base_url}} /mahasiswa/ {{mahasiswaId}}"
+method: PUT
+headers:
+  Content-Type: application/json
+  x-api-key: "{{api_key}}"
+body:
+  type: json
+  content: '{ "jurusan": "Informatika" }'
+scripts:
+  - type: afterResponse
+    code: "pm.test('Status code adalah 200', function () {\r
+
+      \  pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test('Jurusan berubah, nama tetap', function () {\r
+
+      \  const jsonData = pm.response.json();\r
+
+      \  pm.expect(jsonData.jurusan).to.eql('Informatika');\r
+
+      \  pm.expect(jsonData.nama).to.eql('Citra');\r
+
+      });"
+    language: text/javascript
+order: 4457912172899297
