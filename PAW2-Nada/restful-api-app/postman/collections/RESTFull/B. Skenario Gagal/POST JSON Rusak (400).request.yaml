@@ -1,4 +1,28 @@
 $kind: http-request
-url: ""
+url: "{{base_url}} /mahasiswa"
 method: POST
+headers:
+  x-api-key: "{{api_key}}"
+  Content-Type: application/json
+body:
+  type: json
+  content: '{"nama": "Rusak",}'
+scripts:
+  - type: afterResponse
+    code: "pm.test('Status code adalah 400', function () {\r
+
+      \  pm.response.to.have.status(400);\r
+
+      });\r
+
+      \r
+
+      pm.test('Respons tetap berupa JSON, bukan HTML', function () {\r
+
+      \  pm.response.to.be.json;\r
+
+      \  pm.expect(pm.response.json().message).to.eql('Format JSON tidak valid');\r
+
+      });"
+    language: text/javascript
 order: 1791795711629
