@@ -2,7 +2,15 @@ name: Production
 values:
   - key: base_url
     value: ''
-  - key: api-key
+    disabled: true
+  - key: x-api-key
     value: ''
+    disabled: true
   - key: mahasiswaId
+    value: ''
+  - key: base_url
+    value: ''
+  - key: x-api-key
+    value: ''
+  - key: playerId
     value: ''

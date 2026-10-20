@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{base_url}}/mahasiswa/{{mahasiswaId}}"
+url: "{{base_url}}/players/{{playerId}}"
 method: GET
 scripts:
   - type: afterResponse
@@ -11,10 +11,12 @@ scripts:
 
       \r
 
-      pm.test('Pesan error: Data tidak ditemukan', function () {\r
+      pm.test('Pesan memuat tidak ditemukan', function () {\r
 
-      \  pm.expect(pm.response.json().message).to.eql('Data tidak ditemukan');\r
+      \  const jsonData = pm.response.json();\r
+
+      \  pm.expect(jsonData.message).to.include('tidak ditemukan');\r
 
       });"
     language: text/javascript
-order: 1791795708629
+order: 4000
