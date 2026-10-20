@@ -1,25 +1,9 @@
-// controllers/mahasiswaController.js (Baris 1)
-
-const Mahasiswa = require('../models/mahasiswaModels'); // ✅ Tambahkan huruf 's'
-
 const mongoose = require('mongoose');
 
 const mahasiswaSchema = new mongoose.Schema({
-  npm: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  nama: {
-    type: String,
-    required: true
-  },
-  prodi: {
-    type: String,
-    required: true
-  }
-}, {
-  timestamps: true
+  nama: { type: String, required: [true, 'nama wajib diisi'], trim: true },
+  nim: { type: String, required: [true, 'nim wajib diisi'], unique: true, trim: true },
+  createdAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Mahasiswa', mahasiswaSchema);

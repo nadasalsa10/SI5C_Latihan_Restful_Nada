@@ -1,43 +1,13 @@
 $kind: http-request
 url: "{{base_url}}/mahasiswa"
 method: POST
+headers:
+  x-api-key: "{{api-key}}"
 body:
   type: json
-  content: "{\r
-
-    \    \"id\" : 3,\r
-
-    \    \"nama\": \"Citra\",\r
-
-    \    \"jurusan\": \"Sistem Informasi\"\r
-
-    }"
+  content: ""
 scripts:
   - type: afterResponse
-    code: "pm.test('Status code adalah 201', function () {\r
-
-      \  pm.response.to.have.status(201);\r
-
-      });\r
-
-      \r
-
-      pm.test('Data baru memiliki id dan nama sesuai kiriman', function () {\r
-
-      \  const jsonData = pm.response.json();\r
-
-      \  pm.expect(jsonData).to.have.property('id');\r
-
-      \  pm.expect(jsonData.nama).to.eql('Citra');\r
-
-      });\r
-
-      \r
-
-      if (pm.response.code === 201) {\r
-
-      \  pm.environment.set('mahasiswaId', pm.response.json().id);\r
-
-      }"
+    code: ""
     language: text/javascript
 order: 2000

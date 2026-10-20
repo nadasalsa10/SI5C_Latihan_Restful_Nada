@@ -1,4 +1,4 @@
-const Mahasiswa = require('../models/mahasiswaModel');
+const Mahasiswa = require('../models/mahasiswaModels');
 const { errorHttp } = require('../middlewares/errorHandler');
 
 exports.create = async (req, res) => {
@@ -19,4 +19,20 @@ exports.getById = async (req, res) => {
   const data = await Mahasiswa.findById(req.params.id);
   if (!data) throw errorHttp(404, 'Data tidak ditemukan');
   res.json(data);
+};
+
+exports.update = async (req, res) => {
+  const data = await Mahasiswa.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { returnDocument: 'after', runValidators: true }
+  );
+  if (!data) throw errorHttp(404, 'Data tidak ditemukan');
+  res.json(data);
+};
+
+exports.remove = async (req, res) => {
+  const data = await Mahasiswa.findByIdAndDelete(req.params.id);
+  if (!data) throw errorHttp(404, 'Data tidak ditemukan');
+  res.status(204).send();
 };

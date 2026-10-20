@@ -1,4 +1,56 @@
 $kind: http-request
-url: ""
+url: "{{base_url}}/mahasiswa"
 method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test('Status code adalah 200', function () {\r
+
+      \  pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test('Response berupa array', function () {\r
+
+      \  const jsonData = pm.response.json();\r
+
+      \  pm.expect(jsonData).to.be.an('array');\r
+
+      });\r
+
+      \r
+
+      pm.test('Setiap data memiliki id dan nama', function () {\r
+
+      \  const jsonData = pm.response.json();\r
+
+      \  jsonData.forEach((item) => {\r
+
+      \    pm.expect(item).to.have.property('id');\r
+
+      \    pm.expect(item).to.have.property('nama');\r
+
+      \  });\r
+
+      });\r
+
+      \r
+
+      pm.test('Response time di bawah 500ms', function () {\r
+
+      \  pm.expect(pm.response.responseTime).to.be.below(500);\r
+
+      });\r
+
+      \r
+
+      pm.test('Data mahasiswa pertama bernama Andi', function () {\r
+
+      \  const jsonData = pm.response.json();\r
+
+      \  pm.expect(jsonData[0].nama).to.eql('Andi');\r
+
+      });"
+    language: text/javascript
 order: 1000

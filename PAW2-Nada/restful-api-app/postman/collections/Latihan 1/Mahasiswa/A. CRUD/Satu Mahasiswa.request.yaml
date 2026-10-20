@@ -1,5 +1,5 @@
 $kind: http-request
-url: 123456789pm.test('Status code adalah 200', function () {  pm.response.to.have.status(200);});pm.test('Jurusan berubah, nama tetap', function () {  const jsonData = pm.response.json();  pm.expect(jsonData.jurusan).to.eql('Informatika');  pm.expect(jsonData.nama).to.eql('Citra');});Use JavaScript to write tests, visualize response, and more./mahasiswa/{{mahasiswaId}}
+url: ""
 method: GET
 headers:
   x-api-key: "{{api-key}}"
