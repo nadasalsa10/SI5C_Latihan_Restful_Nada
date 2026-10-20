@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{base_url}}/mahasiswa/{{mahasiswaId}}"
+method: PUT
+headers:
+  x-api-key: "{{api-key}}"
+  Content-Type: application/json
+order: 4000

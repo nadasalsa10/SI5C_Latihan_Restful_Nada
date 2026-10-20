@@ -2,16 +2,15 @@ name: Development
 values:
   - key: base_url
     value: ''
-    disabled: true
   - key: api_key
     value: ''
-    disabled: true
   - key: mahasiswaId
     value: ''
-    disabled: true
   - key: base_url
     value: ''
+    disabled: true
   - key: api-key
     value: ''
+    disabled: true
   - key: playerId
     value: ''

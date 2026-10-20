@@ -1,5 +1,8 @@
 workspace:
   id: a8eb7bd6-d1b4-4069-8b76-7f8a8d8b1720
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
 cloudResources:
   collections:
     ../postman/collections/Sepak Bola: 58421786-cfc0a4a5-2e43-40e9-9b7c-f8aebc70daf8
