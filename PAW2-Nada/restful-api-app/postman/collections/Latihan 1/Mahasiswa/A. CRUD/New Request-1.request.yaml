@@ -1,0 +1,19 @@
+$kind: http-request
+name: New Request
+url: http://localhost:4000/mahasiswa
+method: PUT
+headers:
+  x-api-key: "{{api_key}}"
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama\": \"Citra Lestari\",\r
+
+    \  \"nim\": \"2301003\",\r
+
+    \  \"alamat\": { \"jalan\": \"Jl. Merdeka No. 10\", \"kota\": \"Palembang\" }\r
+
+    }"
+order: 5000

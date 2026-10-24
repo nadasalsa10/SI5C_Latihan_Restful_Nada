@@ -1,4 +1,4 @@
-const Mahasiswa = require('../models/mahasiswaModels');
+const Mahasiswa = require('../models/mahasiswaModel');
 const { errorHttp } = require('../middlewares/errorHandler');
 
 exports.create = async (req, res) => {

@@ -1,7 +1,10 @@
 $kind: http-request
-url: "{{base_url}}/mahasiswa/6ad70587b53a36f2ae0596dd"
-method: PUT
+url: http://localhost:4000/mahasiswa
+method: POST
 headers:
   x-api-key: "{{api-key}}"
   Content-Type: application/json
+body:
+  type: json
+  content: '{ "nama": "Andi Pratama", "nim": "2301001" }'
 order: 4000
