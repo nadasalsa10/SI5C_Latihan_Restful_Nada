@@ -1,6 +1,8 @@
 $kind: http-request
-url: "{{base_url}}/mahasiswa"
+url: "{{base_url}}/mahasiswa?kota-Palembang"
 method: GET
+queryParams:
+  kota-Palembang: null
 scripts:
   - type: afterResponse
     code: "pm.test('Status code adalah 200', function () {\r

@@ -1,4 +1,18 @@
 $kind: http-request
 url: http://localhost:4000/mahasiswa
 method: POST
+headers:
+  x-api-key: "{{api_key}}"
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama\": \"M Fadhil Anhar\",\r
+
+    \  \"nim\": \"2428240158\",\r
+
+    \  \"alamat\": { \"jalan\": \"Jl. Tabong Company No. 20\", \"kota\": \"Papua\" }\r
+
+    }"
 order: 4000
