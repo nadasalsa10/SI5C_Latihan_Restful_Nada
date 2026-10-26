@@ -6,5 +6,13 @@ headers:
   Content-Type: application/json
 body:
   type: json
-  content: '{ "nama": "Andi Pratama", "nim": "2301001" }'
+  content: "{\r
+
+    \  \"nama\": \"Citra Lestari\",\r
+
+    \  \"nim\": \"2301003\",\r
+
+    \  \"alamat\": { \"jalan\": \"Jl. Merdeka No. 10\", \"kota\": \"Palembang\" }\r
+
+    }"
 order: 4000
