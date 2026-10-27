@@ -1,4 +1,7 @@
 $kind: http-request
-url: ""
+url: http://localhost:4000/mahasiswa?limit=2&fields=nama,nim,alamat
 method: GET
+queryParams:
+  limit: "2"
+  fields: nama,nim,alamat
 order: 2000
