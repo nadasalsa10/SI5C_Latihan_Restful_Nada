@@ -13,5 +13,13 @@ values:
     value: ''
   - key: api-key
     value: ''
+    disabled: true
   - key: playerId
+    value: ''
+    disabled: true
+  - key: base_url
+    value: ''
+  - key: api-key
+    value: ''
+  - key: teknisiId
     value: ''

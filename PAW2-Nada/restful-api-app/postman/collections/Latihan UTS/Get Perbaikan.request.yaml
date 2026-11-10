@@ -1,0 +1,11 @@
+$kind: http-request
+url: "http://localhost:3000 /perbaikan?status=diperbaiki "
+method: GET
+headers:
+  x-api-key: "{{x-api-key}}"
+queryParams:
+  status: "diperbaiki "
+body:
+  type: json
+  content: ""
+order: 1000

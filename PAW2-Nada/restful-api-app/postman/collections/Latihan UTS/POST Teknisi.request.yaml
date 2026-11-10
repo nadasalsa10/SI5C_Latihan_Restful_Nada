@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:3000/teknisi
+method: POST
+body:
+  type: json
+  content: '{"kode":"TK01","nama":"Qila Teknisi"}'
+order: 3000
