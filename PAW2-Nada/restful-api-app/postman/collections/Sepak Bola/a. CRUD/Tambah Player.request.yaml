@@ -1,5 +1,5 @@
 $kind: http-request
-url: View complete documentation/players
+url: http://localhost:3000/players
 method: POST
 headers:
   Content-Type: application/json
@@ -8,15 +8,15 @@ body:
   type: json
   content: "{\r
 
-    \  \"id\": 4,\r
+    \  \"nama\": \"Andi Saputra\",\r
 
-    \  \"nama\": \"Budi Santoso\",\r
+    \  \"klub_id\": \"6ae1af0b3850f4ee813b021a\", \r
 
-    \  \"klub\": \"Persija Jakarta\",\r
+    \  \"posisi\": \"bek\",\r
 
-    \  \"posisi\": \"gelandang\",\r
+    \  \"nomorPunggung\": 4,\r
 
-    \  \"nomorPunggung\": 8\r
+    \  \"kewarganegaraan\": \"Indonesia\"\r
 
     }"
 scripts:
